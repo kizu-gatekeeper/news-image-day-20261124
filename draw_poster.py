@@ -280,6 +280,18 @@ def icon_bars(cv, x, y, color):
 
 
 # ---------------------------------------------------------------- layout
+# Layout of the front page (1024x1024, all y coordinates in pixels):
+#   masthead        y  26-152  "THE WORLD TODAY", date line, tagline
+#   lead story      y 168-364  NVIDIA / Huang reinstatement (lead) + chip icon
+#   story grid      y 388-950  2 columns x 3 rows, 472x182 cards, 16px gaps
+#     row 1: Ukraine/Russian warship off Libya | COP31 no-deal outcome
+#     row 2: Pakistan astronaut on Tiangong    | Indonesia factory fire
+#     row 3: states sue SpaceX over Grok       | markets box (dark)
+#   footer          y 968-994  scope note ("events ... on 24 November 2026")
+# Card internals: kicker at +16, headline at +44 (scale 3, leading 22),
+# body below the headline (scale 2, leading 16). The leading values are
+# chosen so the longest card (3-line headline + 4-line body) still ends
+# inside the 182px card: 44 + 3*22 + 6 + 3*16 + 14 = 178.
 LEAD = {
     "kicker": "TECHNOLOGY - UNITED STATES",
     "headline": "NVIDIA BRINGS BACK HUANG",
@@ -385,8 +397,9 @@ def draw_poster():
             ICONS[card["icon"]](cv, ix, iy, card["accent"])
         tw = cw - 18 - 96
         hy = draw_block(cv, x + 18, y + 44,
-                        wrap(card["headline"], 3, tw), 3, INK, leading=25)
-        draw_block(cv, x + 18, hy + 6, wrap(card["body"], 2, cw - 36), 2, INK)
+                        wrap(card["headline"], 3, tw), 3, INK, leading=22)
+        draw_block(cv, x + 18, hy + 6, wrap(card["body"], 2, cw - 36), 2, INK,
+                   leading=16)
 
     # ---- markets box
     mx, my = positions[5]
