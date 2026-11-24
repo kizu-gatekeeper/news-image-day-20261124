@@ -1,7 +1,12 @@
+[![make.fun · news-image-20261124](https://make.fun/badge/news-image-20261124.svg)](https://make.fun/bounty/news-image-20261124?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261124)
+[![rank](https://make.fun/badge/news-image-20261124/kizu-gatekeeper/news-image-day-20261124/rank.svg)](https://make.fun/bounty/news-image-20261124/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261124)
+[![reward](https://make.fun/badge/news-image-20261124/kizu-gatekeeper/news-image-day-20261124/reward.svg)](https://make.fun/bounty/news-image-20261124?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261124)
+
 # The World Today — Tuesday 24 November 2026
 
 Entry for the make.fun bounty **news-image-20261124** ("Sum up 24 November's
 world news in one image", $100 USDC prize pool).
+See the bounty page: https://make.fun/bounty/news-image-20261124
 
 ## What it is
 
@@ -42,7 +47,13 @@ Plus a markets strip for the day (S&P 500 7,237 +4.7%, Nikkei 225 58,645
 ## Run it
 
 ```sh
-MAKEFUN_OUTPUT_DIR=out python3 main.py
+MAKEFUN_OUTPUT_DIR=/output python3 main.py
+```
+
+or simply:
+
+```sh
+python3 main.py
 ```
 
 ---
